@@ -17,6 +17,7 @@ based on 15% of the sales transaction amount.
 7. Who do you conclude is our primary person of interest?
 
 use wsda_music.db
+sqlite dbbrowswer
 ANSWER #4::
 */
 
