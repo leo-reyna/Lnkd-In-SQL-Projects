@@ -18,8 +18,31 @@ based on 15% of the sales transaction amount.
 
 use wsda_music.db
 sqlite dbbrowswer
-ANSWER #4::
 */
+
+--ANSWER #1:
+SELECT
+	emp.FirstName AS [Employee First Name],
+	emp.LastName AS [Employee Last Name],
+	SUM(inv.total) as [TOTAL Sales]
+FROM 
+	Invoice AS inv
+INNER JOIN 
+	Customer AS cus
+ON inv.CustomerId = cus.CustomerId
+INNER JOIN 
+	Employee AS emp
+ON emp.EmployeeId = cus.SupportRepId
+WHERE 
+	InvoiceDate >= '2011-01-01' AND InvoiceDate <= '2012-12-31'
+AND 
+	inv.Total > 11.66  --average sale
+GROUP BY
+	emp.FirstName,
+	emp.LastName
+ORDER BY emp.LastName
+
+--ANSWER #4:
 
 SELECT
 	cus.FirstName AS [cus First Name],
