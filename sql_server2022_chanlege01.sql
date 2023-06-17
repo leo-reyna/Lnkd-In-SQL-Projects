@@ -1,4 +1,6 @@
 --use tsql2012 db
+--categorize products by sale type
+--lr 062023
 
 SELECT 
 	PRP.productname as [productname], 
