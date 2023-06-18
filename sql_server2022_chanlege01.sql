@@ -21,3 +21,33 @@ INNER JOIN
 	Production.Products AS PRP
 ON PRP.productid = OD.productid
 ORDER BY OD.unitprice
+
+-- 2nd PART 
+--USE TSQL2012
+
+SELECT empid, YEAR(orderdate) as orderyear, COUNT(*) AS numorders
+FROM Sales.Orders
+WHERE custid = 71 
+GROUP BY empid, YEAR(orderdate)
+HAVING COUNT (*) > 1
+ORDER BY empid, orderyear
+
+--You will retrieve a list of distinct CITY names from the STATION table where the CITY name starts and ends with a vowel.
+SELECT DISTINCT shipcity
+FROM Sales.Orders
+WHERE shipcity LIKE '[aeiou]%[aeiou]';
+
+--You will retrieve a list of distinct CITY names from the STATION table where the CITY name starts with a vowel
+SELECT DISTINCT shipcity
+FROM Sales.Orders
+WHERE shipcity LIKE '[aeiou]%';
+
+--You will retrieve a list of distinct CITY names from the STATION table where the CITY name ends with a vowel
+SELECT DISTINCT shipcity
+FROM Sales.Orders
+WHERE shipcity LIKE '%[aeiou]';
+
+--You will retrieve a list of distinct CITY names from the STATION table where the CITY name DO NOT START with a vowel
+SELECT DISTINCT shipcity, shipcountry
+FROM Sales.Orders
+WHERE shipcity NOT LIKE '%[aeiou]';
