@@ -32,22 +32,22 @@ GROUP BY empid, YEAR(orderdate)
 HAVING COUNT (*) > 1
 ORDER BY empid, orderyear
 
---You will retrieve a list of distinct CITY names from the STATION table where the CITY name starts and ends with a vowel.
+--You will retrieve a list of distinct CITY names from the Orders table where the CITY name starts and ends with a vowel.
 SELECT DISTINCT shipcity
 FROM Sales.Orders
 WHERE shipcity LIKE '[aeiou]%[aeiou]';
 
---You will retrieve a list of distinct CITY names from the STATION table where the CITY name starts with a vowel
+--You will retrieve a list of distinct CITY names from the Orders table where the CITY name starts with a vowel
 SELECT DISTINCT shipcity
 FROM Sales.Orders
 WHERE shipcity LIKE '[aeiou]%';
 
---You will retrieve a list of distinct CITY names from the STATION table where the CITY name ends with a vowel
+--You will retrieve a list of distinct CITY names from the Orders table where the CITY name ends with a vowel
 SELECT DISTINCT shipcity
 FROM Sales.Orders
 WHERE shipcity LIKE '%[aeiou]';
 
---You will retrieve a list of distinct CITY names from the STATION table where the CITY name DO NOT START with a vowel
+--You will retrieve a list of distinct CITY names from the Orders table where the CITY name DO NOT START with a vowel
 SELECT DISTINCT shipcity, shipcountry
 FROM Sales.Orders
 WHERE shipcity NOT LIKE '%[aeiou]';
