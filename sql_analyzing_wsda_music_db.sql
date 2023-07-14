@@ -135,8 +135,10 @@ GROUP BY
 	emp.LastName
 ORDER BY [Total Sales] Desc
 
+/*
 ANSWER #2:
 */
+
 SELECT
 	emp.FirstName AS [Employee First Name],
 	emp.LastName AS [Employee Last Name],
