@@ -25,7 +25,7 @@ time period?
 4. What is the average transaction amount for each year that WSDA Music has been
 in business
 
-# Challenge 3 #
+## Challenge 3 ##
 
 Queries that perform in-depth analysis with the aim of finding employees who may have been financially motivated to commit a crime
 
